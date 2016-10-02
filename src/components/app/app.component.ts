@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RequestService } from '../../services/request.service';
+import { IPerson } from '../../models/iperson.model.ts';
 
 @Component({
   selector   : 'app',
@@ -7,16 +8,21 @@ import { RequestService } from '../../services/request.service';
   providers: [RequestService]
 })
 export class AppComponent {
-  getData:string;
+  errorMessage: string;
+  personData: IPerson[];
 
-  constructor (private _requestService: RequestService ) {  this.onGet(); }
+  constructor (private _requestService: RequestService ) {}
 
-  onGet(){
-    console.log('Getting user now.1');
-      this._requestService.getUser().subscribe(
-        data =>this.getData = JSON.stringify(data),
-        error=>console.log('ERROR',error),
-        ()=>console.log('Finished Get2',this.getData)
-      );
+  ngOnInit(): void {
+    this.getPeople();
   }
+
+  getPeople() {
+    this._requestService.getPeople()
+      .subscribe(
+        data => this.personData = data,
+        error => this.errorMessage = <any>error
+      )
+  }
+
 }

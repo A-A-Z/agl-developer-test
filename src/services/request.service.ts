@@ -1,22 +1,25 @@
 // Imports
-import { Injectable }     from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-//import { Comment }           from '../model/comment';
-import {Observable} from 'rxjs/Rx';
-
-// Import RxJs required methods
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { IPerson } from '../models/iperson.model.ts';
 
 @Injectable()
 export class RequestService {
-     // Resolve HTTP using the constructor
-     constructor (private _http:Http) {}
-     // private instance variable to hold base url
-     //private commentsUrl = 'http://localhost:3000/api/comments';
+  constructor (private _http:Http) {}
 
-    getUser(){
-      return this._http.get('http://localhost:1337/agl-developer-test.azurewebsites.net/people.json')
-        .map(res=>res.json());
-    };
+  private commentsUrl = 'http://localhost:1337/agl-developer-test.azurewebsites.net/people.json';
+
+  getPeople(): Observable<IPerson[]> {
+    return this._http.get(this.commentsUrl)
+      .map((response: Response) => <IPerson[]>response.json())
+      .do(data => console.log('Result:',data))
+      .catch(this.handleError)
+  }
+
+  private handleError(error: Response) {
+    return Observable.throw(error.json().error || 'Server error');
+  }
 }

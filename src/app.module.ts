@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './components/app/app.component';
-//import { RequestService } from './services/request.service';
+import { CatsComponent } from './components/cats/cats.component';
 
 @NgModule({
     bootstrap: [ AppComponent ],
-    declarations: [ AppComponent ],
+    declarations: [ AppComponent, CatsComponent ],
     imports: [ BrowserModule, ReactiveFormsModule, HttpModule, JsonpModule ]
 })
 

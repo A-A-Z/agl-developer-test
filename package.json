@@ -8,7 +8,7 @@
     "server": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "start": "npm run server"
   },
-  "author": "Paul Lynch",,
+  "author": "Paul Lynch",
   "license": "MIT",
   "devDependencies": {
     "@types/core-js": "^0.9.32",
@@ -37,13 +37,15 @@
     "@angular/platform-server": "2.0.0",
     "@angular/router": "3.0.0",
     "@angular/upgrade": "2.0.0",
+    "@types/lodash": "^4.14.36",
+    "angular2-in-memory-web-api": "0.0.20",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "ie-shim": "^0.1.0",
+    "lodash": "^4.16.2",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.12",
-    "zone.js": "~0.6.23",
-    "angular2-in-memory-web-api": "0.0.20",
-    "bootstrap": "^3.3.7"
+    "zone.js": "~0.6.23"
   },
   "keywords": [
     "Angular2",
