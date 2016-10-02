@@ -41,24 +41,16 @@
     "angular2-in-memory-web-api": "0.0.20",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "corsproxy": "^1.5.0",
     "ie-shim": "^0.1.0",
     "lodash": "^4.16.2",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "~0.6.23"
   },
-  "keywords": [
-    "Angular2",
-    "angular2-seed",
-    "official angular 2 seed",
-    "official angular2 seed"
-  ],
+  "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular/angular2-seed.git"
-  },
-  "bugs": {
-    "url": "https://github.com/angular/angular2-seed/issues"
-  },
-  "homepage": "https://github.com/angular/angular2-seed#readme"
+    "url": "git+https://github.com/A-A-Z/agl-developer-test"
+  }
 }
