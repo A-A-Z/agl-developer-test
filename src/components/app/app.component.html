@@ -1,9 +1,21 @@
-<h2>People</h2>
+<div [ngSwitch]="loadStates[loadStateKey]">
 
-<ul>
-  <li *ngFor="let person of personData">
-    {{ person.name }}
-  </li>
-</ul>
+  <div *ngSwitchCase="'loading'">
+    Loading Cats
+  </div>
 
-<cats [personData]="personData"></cats>
+  <div *ngSwitchCase="'results'">
+    <cats [personData]="personData"></cats>
+  </div>
+
+  <div *ngSwitchCase="'no-results'">
+    <h2>No Cats :(</h2>
+    <p>Sorry, no results found.</p>
+  </div>
+
+  <div *ngSwitchCase="'error'">
+    <h2>Error</h2>
+    <pre>{{errorMessage}}</pre>
+  </div>
+
+</div>

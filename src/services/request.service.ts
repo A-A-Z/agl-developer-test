@@ -10,10 +10,10 @@ import { IPerson } from '../models/iperson.model.ts';
 export class RequestService {
   constructor (private _http:Http) {}
 
-  private commentsUrl = 'http://localhost:1337/agl-developer-test.azurewebsites.net/people.json';
+  private requestUrl = 'http://localhost:1337/agl-developer-test.azurewebsites.net/people.json';
 
   getPeople(): Observable<IPerson[]> {
-    return this._http.get(this.commentsUrl)
+    return this._http.get(this.requestUrl)
       .map((response: Response) => <IPerson[]>response.json())
       .do(data => console.log('Result:',data))
       .catch(this.handleError)
