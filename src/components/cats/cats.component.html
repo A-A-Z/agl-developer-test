@@ -3,16 +3,16 @@
 
 <h3>Male</h3>
 
-<ul>
+<ul class="cat-list male-list">
   <li *ngFor="let cat of cats.Male">
-    Cat: {{cat.name}}
+    <catTile  [cat]="cat"></catTile>
   </li>
 </ul>
 
 <h3>Female</h3>
 
-<ul>
+<ul class="cat-list female-list">
   <li *ngFor="let cat of cats.Female">
-    Cat: {{cat.name}}
+    <catTile  [cat]="cat"></catTile>
   </li>
 </ul>

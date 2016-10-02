@@ -1,5 +1,97 @@
-$colour-bg: #0CC;
+$colour-bg: #DAEAEA;
+$colour-text: #222;
+$colour-link: #999;
+$colour-header-bg: #111;
+$colour-header-text: #CCC;
+$colour-cat-tile-male: #4cb5f5;
+$colour-cat-tile-female: #ab51f2;
+$colour-cat-name: #FFF;
+
+@mixin cat-tile-colours($colour) {
+  background-color: $colour;
+  box-shadow: 4px 4px 2px rgba($colour, 0.3);
+}
 
 body {
   background-color: $colour-bg;
+  color: $colour-text;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $colour-header-bg;
+  color: $colour-header-text;
+  padding: 10px 20px;
+  text-align: left;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+main {
+  margin: 30px auto;
+  max-width: 800px;
+  padding: 30px;
+  text-align: left;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 1em;
+  border-bottom: 1px solid $colour-text;
+}
+
+a {
+  color: $colour-link;
+}
+
+.cat-list {
+  list-style-type: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  li {
+    float: left;
+    margin: 20px;
+
+    .cat-tile {
+      $height: 62px;
+
+      border-radius: 4px;
+      height: $height;
+      line-height: $height;
+      min-width: 200px;
+      text-align: center;
+
+      .cat-name {
+        color: $colour-cat-name;
+        font-family: 'Bad Script', cursive;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  &.male-list .cat-tile {
+    @include cat-tile-colours($colour-cat-tile-male);
+  }
+
+  &.female-list .cat-tile {
+    @include cat-tile-colours($colour-cat-tile-female);
+  }
 }
